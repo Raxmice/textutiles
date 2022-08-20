@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import {Link} from 'react-router-dom';
 
 export default function Header(prop) {
@@ -9,6 +10,18 @@ export default function Header(prop) {
   function Yourname(){
     prop.Yourname();
   }
+
+  //page navigator
+  const [click, setclick]=useState(["active",""]);
+  function active(event){
+    let acbtn = event.target.name;
+    if(acbtn === "home"){
+      setclick(["active",""]);
+    }else{
+      setclick(["","active"]);
+    }
+  }
+
   return (
     <header className={mode}>
     <nav>
@@ -17,9 +30,9 @@ export default function Header(prop) {
     notes
     </span>
       <div className="nav-links">
-        <Link to="/">Home</Link>
+        <Link name="home" to="/" className={click[0]} onClick={active}>Home</Link>
         <a href="http://raxmice.in">WS-Blog</a>
-        <Link to="/about">About</Link>
+        <Link name="about" to="/about" className={click[1]} onClick={active}>About</Link>
       </div>
       </div>
       

@@ -45,7 +45,7 @@ export default function Formarea(prop) {
     return (
         <div>
             <section className='container' style={{marginTop:'0'}}>
-            <div className='alertbox'><div className={`alert ${prop.mode}`} style={{display:show}}><p>{alert} <span class="material-symbols-outlined">
+            <div className='alertbox'><div className={`alert ${prop.mode}`} style={{display:show}}><p>{alert} <span className="material-symbols-outlined">
             done
             </span></p></div></div>
                 <label className={tcolor}>Enter sentences in this textbox</label><br />
