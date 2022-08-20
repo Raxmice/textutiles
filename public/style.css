@@ -163,3 +163,33 @@ label{
 p span{
     margin-left: 10px;
 }
+
+/*responcive design*/
+ /* Tablet Styles */
+ @media only screen and (min-width: 401px) and (max-width: 960px) {
+    nav{
+        padding: 0 30px;
+    }
+    .container{
+        margin: 0 30px;
+    }
+    .textarea{
+        width: 80%;
+    }
+  }
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+    nav{
+        padding: 0 30px;
+        display: block;
+    }
+    .innav{
+        padding: 5px 0 0 0;
+    }
+    .container{
+        margin: 0 30px;
+    }
+    .textarea{
+        width: 80%;
+    }
+  }
