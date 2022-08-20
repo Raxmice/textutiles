@@ -10,16 +10,12 @@ export default function Header(prop) {
   function Yourname(){
     prop.Yourname();
   }
-
+  //get URL value (path)
+  const [url,seturl]=useState(window.location.pathname);
+  
   //page navigator
-  const [click, setclick]=useState(["active",""]);
   function active(event){
-    let acbtn = event.target.name;
-    if(acbtn === "home"){
-      setclick(["active",""]);
-    }else{
-      setclick(["","active"]);
-    }
+    seturl("/"+event.target.name);
   }
 
   return (
@@ -30,9 +26,9 @@ export default function Header(prop) {
     notes
     </span>
       <div className="nav-links">
-        <Link name="home" to="/" className={click[0]} onClick={active}>Home</Link>
+        <Link name="" to="/" className={url==="/"?"active":""} onClick={active}>Home</Link>
         <a href="http://raxmice.in">WS-Blog</a>
-        <Link name="about" to="/about" className={click[1]} onClick={active}>About</Link>
+        <Link name="about" to="/about" className={url==="/about"?"active":""} onClick={active}>About</Link>
       </div>
       </div>
       
